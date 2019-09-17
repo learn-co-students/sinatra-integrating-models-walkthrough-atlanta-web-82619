@@ -22,12 +22,12 @@ class TextAnalyzer
     def most_used_letter
       s1 = text.gsub(/[^a-z]/, '') # gets rid of spaces
       arr = s1.split('')
-      arr1 = arr.uniq
-      arr2 = {}
-
       arr = arr.map do |c|
         c.upcase
       end
+
+      arr1 = arr.uniq
+      arr2 = {}
    
       arr1.map do |c|
         arr2[c] =  arr.count(c)
