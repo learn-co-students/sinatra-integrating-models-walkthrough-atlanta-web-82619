@@ -25,11 +25,13 @@ class TextAnalyzer
       arr1 = arr.uniq
       arr2 = {}
     
-      arr1.map do |c|
-        arr2[c] =  arr.count(c)
+      arr1.map do |letter|
+        #the letter is the key and the count is the value
+        arr2[letter] =  arr.count(letter)
       end
-    
-      biggest = { arr2.keys.first => arr2.values.first }
+      
+      #sets the initial value for biggest. Might also be done by sorting the arr2 array perhaps?
+      biggest = {arr2.keys.first => arr2.values.first}
     
       arr2.each do |key, value|
         if value > biggest.values.first
